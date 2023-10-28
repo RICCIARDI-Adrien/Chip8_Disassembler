@@ -284,6 +284,8 @@ int main(int argc, char *argv[])
 
 		// Display instruction
 		printf("0x%03X:\t0x%04X\t%s\n", Instruction_Address, Instruction, String_Disassembled_Instruction);
-		Instruction_Address++;
+
+		// Instructions are 16-bit long and start on even address, so increment the address by 2
+		Instruction_Address += 2;
 	}
 }
